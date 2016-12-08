@@ -27,7 +27,7 @@ BOT.on('message', message => {
 		
 		// switch on the first word of the message...
 		switch(args[0]) {
-			case('!avatar'): {
+			case('+avatar'){
 				//const timestamp = new Date().getTime() / 1000;
 				const avatarURL = message.author.avatarURL;
 				//const avatarID = message.author.avatar;
@@ -35,7 +35,8 @@ BOT.on('message', message => {
 				message.channel.sendFile(avatarURL.toString(), '', message.author.toString()).catch(console.error);
 				break;
 			}
-			case('!debug'): {
+			case('+
+			case('+debug'): {
 				var target = message.author;
 				if(args.length > 1) {
 					target = /*args[1]*/ message.mentions.users.first();
