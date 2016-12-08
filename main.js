@@ -22,7 +22,7 @@ BOT.on('ready', () => {
 // Create an event listener for messages.
 BOT.on('message', message => {
 	// if the message starts with '!'...
-	if(message.content.startsWith('!')) {
+	if(message.content.startsWith('+')) {
 		const args = message.content.split(' ');
 		
 		// switch on the first word of the message...
@@ -35,7 +35,20 @@ BOT.on('message', message => {
 				message.channel.sendFile(avatarURL.toString(), '', message.author.toString()).catch(console.error);
 				break;
 			}
-			case('+
+			case('+newrole'): {
+				if(args.length > 1) {
+				guild.createRole()
+					.then(role => console.log('Created role ${role}'))
+					.catch(console.error);
+			}
+			}
+			case('+deleterole'): {
+				if(args.length >1){
+					role.delete()
+						.then(r => console.log('Deleted role ${r}'))
+						.catch(console.error);
+				}
+			}
 			case('+debug'): {
 				var target = message.author;
 				if(args.length > 1) {
