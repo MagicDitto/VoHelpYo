@@ -36,15 +36,14 @@ BOT.on('message', message => {
 				break;
 			}
 			case('+newrole'): {
-				if(args.length > 1) {
-				guild.createRole()
+				guild.createRole({name: 'Meme Role'})
 					.then(role => console.log('Created role ${role}'))
 					.catch(console.error);
 			}
 			}
 			case('+deleterole'): {
-				if(args.length >1){
-					role.delete()
+				if(args.length > 1){
+					role.delete({name: 'Meme Role'})
 						.then(r => console.log('Deleted role ${r}'))
 						.catch(console.error);
 				}
