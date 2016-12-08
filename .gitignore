@@ -1,0 +1,4 @@
+#Ignore node module files
+node_modules/
+#Ignore secrets file
+secrets.js

@@ -6,8 +6,9 @@
 const DISCORD = require('discord.js');
 const BOT = new DISCORD.Client();
 
-const TOKEN = process.env['vohiyo_token'];
-const WEBHOOK = new DISCORD.WebhookClient(process.env['vohiyo_webhook_id'], process.env['vohiyo_webhook_token']);
+const SECRETS = require('./secrets.js');
+const TOKEN = SECRETS.vohelpyo_token;
+const WEBHOOK = new DISCORD.WebhookClient(SECRETS.vohelpyo_webhook_id, SECRETS.vohelpyo_webhook_token);
 
 // Check the ready event: It means that your BOT will start reacting to information from Discord.
 BOT.on('ready', () => {
