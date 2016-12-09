@@ -46,7 +46,6 @@ BOT.on('message', message => {
 					role.delete({name: args[1]})
 						.then(r => console.log('Deleted role ${r}'))
 						.catch(console.error);
-				}
 			}
 			case('+debug'): {
 				var target = message.author;
